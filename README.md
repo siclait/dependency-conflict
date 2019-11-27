@@ -1,44 +1,59 @@
 # dependency-conflict
 
-FIXME: description
+Run `lein deps :tree` to get the following exception:
 
-## Installation
-
-Download from http://example.com/FIXME.
-
-## Usage
-
-FIXME: explanation
-
-    $ java -jar dependency-conflict-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
-
-## License
-
-Copyright © 2019 FIXME
-
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
-
-This Source Code may also be made available under the following Secondary
-Licenses when the conditions for such availability set forth in the Eclipse
-Public License, v. 2.0 are satisfied: GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or (at your
-option) any later version, with the GNU Classpath Exception which is available
-at https://www.gnu.org/software/classpath/license.html.
+```
+java.lang.IllegalArgumentException: No matching field found: getResult for class org.eclipse.aether.collection.UnsolvableVersionConflictException
+ at clojure.lang.Reflector.getInstanceField (Reflector.java:397)
+    clojure.lang.Reflector.invokeNoArgInstanceMember (Reflector.java:440)
+    leiningen.core.classpath$print_failures.invokeStatic (classpath.clj:257)
+    leiningen.core.classpath$print_failures.invoke (classpath.clj:251)
+    leiningen.core.classpath$get_dependencies_STAR_.invokeStatic (classpath.clj:309)
+    leiningen.core.classpath$get_dependencies_STAR_.invoke (classpath.clj:266)
+    clojure.lang.AFn.applyToHelper (AFn.java:165)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.core$memoize$fn__6862.doInvoke (core.clj:6353)
+    clojure.lang.RestFn.invoke (RestFn.java:457)
+    leiningen.core.classpath$get_dependencies$fn__6105.invoke (classpath.clj:333)
+    leiningen.core.classpath$get_dependencies.invokeStatic (classpath.clj:331)
+    leiningen.core.classpath$get_dependencies.doInvoke (classpath.clj:325)
+    clojure.lang.RestFn.invoke (RestFn.java:445)
+    clojure.lang.AFn.applyToHelper (AFn.java:160)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.core$apply.invokeStatic (core.clj:671)
+    clojure.core$apply.invoke (core.clj:660)
+    leiningen.core.classpath$managed_dependency_hierarchy.invokeStatic (classpath.clj:524)
+    leiningen.core.classpath$managed_dependency_hierarchy.doInvoke (classpath.clj:513)
+    clojure.lang.RestFn.invoke (RestFn.java:445)
+    leiningen.deps$deps.invokeStatic (deps.clj:161)
+    leiningen.deps$deps.invoke (deps.clj:106)
+    clojure.lang.AFn.applyToHelper (AFn.java:156)
+    clojure.lang.AFn.applyTo (AFn.java:144)
+    clojure.lang.Var.applyTo (Var.java:705)
+    clojure.core$apply.invokeStatic (core.clj:667)
+    clojure.core$apply.invoke (core.clj:660)
+    leiningen.core.main$partial_task$fn__6592.doInvoke (main.clj:284)
+    clojure.lang.RestFn.applyTo (RestFn.java:139)
+    clojure.lang.AFunction$1.doInvoke (AFunction.java:31)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.core$apply.invokeStatic (core.clj:667)
+    clojure.core$apply.invoke (core.clj:660)
+    leiningen.core.main$apply_task.invokeStatic (main.clj:334)
+    leiningen.core.main$apply_task.invoke (main.clj:320)
+    leiningen.core.main$resolve_and_apply.invokeStatic (main.clj:343)
+    leiningen.core.main$resolve_and_apply.invoke (main.clj:336)
+    leiningen.core.main$_main$fn__6681.invoke (main.clj:452)
+    leiningen.core.main$_main.invokeStatic (main.clj:442)
+    leiningen.core.main$_main.doInvoke (main.clj:439)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.lang.Var.applyTo (Var.java:705)
+    clojure.core$apply.invokeStatic (core.clj:665)
+    clojure.main$main_opt.invokeStatic (main.clj:491)
+    clojure.main$main_opt.invoke (main.clj:487)
+    clojure.main$main.invokeStatic (main.clj:598)
+    clojure.main$main.doInvoke (main.clj:561)
+    clojure.lang.RestFn.applyTo (RestFn.java:137)
+    clojure.lang.Var.applyTo (Var.java:705)
+    clojure.main.main (main.java:37)
+```
